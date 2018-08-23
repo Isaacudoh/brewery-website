@@ -1,0 +1,67 @@
+.card {
+    width: 500px;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 0 15px #00000080
+}
+
+.card--dark {
+    background: #424D51;
+}
+
+.card--light {
+    background: #fff;
+}
+
+.card:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.card--dark:after {
+    border: 3px solid #718085;
+}
+
+.card--light:after {
+    border: 3px solid #414A4D;
+}
+
+.card--dark .section__title{
+    color: #fff;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+.card--dark p {
+    color: #A3B9BF;
+}
+.card--light p {
+    color: #414A4D;
+}
+
+.btn {
+    padding: 6px 20px;
+    font-family: 'program';
+    border-radius: 7px;
+}
+
+.btn--light {
+    background: #D5C8C0;
+    color: #414A4D;
+}
+
+.btn--dark {
+    background: #414A4D;
+    color: #D5C8C0;
+}
+
+.btn--outline {
+    color: #414A4D;
+    background: transparent;
+    border: 2px solid #414A4D;
+}

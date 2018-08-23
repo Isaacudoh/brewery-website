@@ -1,0 +1,46 @@
+.logo {
+  width: 250px;
+  margin: 0 auto 2em;
+  display: block;
+}
+
+.section--intro {
+  background-image: url(../images/hero-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -ms-grid;
+  display: grid;
+  grid: auto-flow/minmax(1em, 1fr) minmax(400px, 650px) minmax(1em, 1fr);
+  padding: 20vh 0;
+  height: 100vh;
+  text-align: center;
+  color: #AEA79E;
+}
+
+.section--intro .logo {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  margin-bottom: 2.5em;
+}
+
+.intro__text {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  position: relative;
+}
+
+.intro__text::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: white;
+  opacity: .3;
+  width: 100px;
+  position: absolute;
+  top: -1em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}

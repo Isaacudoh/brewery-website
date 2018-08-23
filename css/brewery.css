@@ -1,0 +1,14 @@
+.section--brewery {
+    margin: 4rem 0;
+}
+
+.section--brewery p {
+    max-width: 500px;
+}
+
+img.float-left {
+    float: left;
+    width: 20%;
+    min-width: 400px;
+    margin-right: 20px
+}
