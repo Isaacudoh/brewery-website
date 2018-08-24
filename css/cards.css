@@ -30,11 +30,11 @@
 }
 
 .card--dark:after {
-    border: 3px solid #718085;
+    border: 3px dashed #718085;
 }
 
 .card--light:after {
-    border: 3px solid #414A4D;
+    border: 3px dashed #414A4D;
 }
 
 .card--dark .section__title{
