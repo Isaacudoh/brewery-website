@@ -1,0 +1,14 @@
+footer {
+    text-align: center;
+    margin: 150px 0;
+    font-family: 'program';
+    color: #D1C9C1
+}
+
+.logo--light path {
+    fill: #D1C9C1;
+}
+
+footer .logo {
+    margin: 20px auto;
+}

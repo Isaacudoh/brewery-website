@@ -1,8 +1,15 @@
+.section--mission,
+.section--taproom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
     width: 500px;
-    padding: 1.5rem;
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
     position: relative;
-    box-shadow: 0 0 15px #00000080
+    box-shadow: 0 0 15px #00000080;
 }
 
 .card--dark {
@@ -48,6 +55,7 @@
     padding: 6px 20px;
     font-family: 'program';
     border-radius: 7px;
+    margin-right: 10px;
 }
 
 .btn--light {
@@ -64,4 +72,10 @@
     color: #414A4D;
     background: transparent;
     border: 2px solid #414A4D;
+}
+
+.card ~ img {
+    margin-left: -50px;
+    margin-top: 140px;
+    z-index: 10;
 }
