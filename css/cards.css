@@ -60,6 +60,7 @@
     font-family: 'program';
     border-radius: 7px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 .btn--light {
@@ -95,6 +96,7 @@
     }
     .card {
         padding: 1.3rem;
+        box-shadow: none;
     }
     .card ~ img {
         display: none;
