@@ -4,7 +4,7 @@
     align-items: center
 }
 
-.section__image {
+.section--brewery .section__image {
     flex: 1;
     object-fit: cover;
     overflow: hidden;
@@ -22,23 +22,24 @@
 
 @media (max-width: 680px) {
     .section--brewery {
-        flex-direction: column
+        flex-direction: column;
+        margin: 0;
     }
-    .section__image {
+    .section--brewery .section__image {
         display: none;
         height: 500px;
         width: 100%;
         margin: 0;
     }
-    .section__content {
+    .section--brewery .section__content {
         flex: 2;
         padding: 3rem;
         position: relative;
     }
-    .section__content p {
+    .section--brewery .section__content p {
         color: #414A4D
     }
-    .section__content::after {
+    .section--brewery .section__content::after {
         content: '';
         position: absolute;
         top: 0;

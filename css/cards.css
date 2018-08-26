@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.section--taproom {
+    flex-direction: row-reverse
+}
+
 .card {
     width: 500px;
     padding: 1.5rem 3rem 1.5rem 1.5rem;
@@ -74,12 +78,46 @@
     border: 2px solid #414A4D;
 }
 
-.card ~ img {
+.front {
     margin-left: -50px;
     margin-top: 140px;
     z-index: 10;
 }
 
-@media (max-width: px) {
-    
+.card ~ .section__image {
+    display: none;
+}
+
+@media (max-width: 870px) {
+    .section--mission,
+    .section--taproom {
+        flex-direction: column-reverse
+    }
+    .card {
+        padding: 1.3rem;
+    }
+    .card ~ img {
+        display: none;
+    }
+    .card ~ .section__image {
+        display: block;
+        height: 300px;
+        width: 100%;
+        background: url(../images/mission.jpg) no-repeat fixed;
+        background-size: cover;
+    }
+    .card--light ~ .section__image {
+        background: url(../images/taproom.jpg) no-repeat fixed;
+        background-size: cover;
+    }
+    .back {
+        margin:0;
+        width: 100%;
+        object-fit: cover
+    }
+    .front {
+        object-fit: cover;
+        width: 100%;
+        margin: 0
+    }
 }
