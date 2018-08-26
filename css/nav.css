@@ -1,9 +1,12 @@
 nav {
+    /* position: fixed; */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     color: #fff;
+    padding: .5rem 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -12,4 +15,11 @@ nav ul {
     justify-content: space-around;
     max-width: 450px;
     margin: auto
+}
+
+@media (max-width: 450px) {
+    nav {
+        padding: .5rem 1.25rem;
+        font-size: 18px;
+    }
 }
