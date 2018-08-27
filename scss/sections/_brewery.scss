@@ -1,7 +1,8 @@
 .section--brewery {
     margin: 4rem 0;
     display: flex;
-    align-items: center
+    align-items: center;
+    overflow: hidden;
 }
 
 .section--brewery .section__image {
@@ -24,7 +25,6 @@
 @media (max-width: 680px) {
     .section--brewery {
         flex-direction: column;
-        margin: 0;
     }
     .section--brewery .section__image {
         display: none;
@@ -38,7 +38,7 @@
         position: relative;
     }
     .section--brewery .section__content p {
-        color: #414A4D
+        color: #272727
     }
     .section--brewery .section__content::after {
         content: '';
@@ -50,7 +50,7 @@
         background: url(../images/keg.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: .75;
+        opacity: .7;
         z-index: -1;
     }
 }

@@ -74,7 +74,7 @@ nav ul {
   top: -1em;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 @media (max-width: 470px) {
@@ -129,20 +129,16 @@ nav ul {
           flex-direction: row-reverse;
 }
 
-.card {
-  width: 500px;
-  padding: 1.5rem 3rem 1.5rem 1.5rem;
-  position: relative;
+.front,
+.back {
   -webkit-box-shadow: 0 0 15px #00000080;
           box-shadow: 0 0 15px #00000080;
 }
 
-.card--dark {
-  background: #424D51;
-}
-
-.card--light {
-  background: #fff;
+.card {
+  width: 500px;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  position: relative;
 }
 
 .card:after {
@@ -152,29 +148,38 @@ nav ul {
   left: 10px;
   right: 10px;
   bottom: 10px;
-}
-
-.card--dark:after {
-  border: 3px dashed #718085;
-}
-
-.card--light:after {
-  border: 3px dashed #414A4D;
-}
-
-.card--dark .section__title {
-  color: #fff;
+  z-index: 0;
 }
 
 .card p {
   margin-bottom: 20px;
 }
 
-.card--dark p {
+.card.card--dark {
+  background: #424D51;
+}
+
+.card.card--light {
+  background: #fff;
+}
+
+.card.card--dark:after {
+  border: 3px dashed #718085;
+}
+
+.card.card--light:after {
+  border: 3px dashed #414A4D;
+}
+
+.card.card--dark .section__title {
+  color: #fff;
+}
+
+.card.card--dark p {
   color: #A3B9BF;
 }
 
-.card--light p {
+.card.card--light p {
   color: #414A4D;
 }
 
@@ -184,22 +189,36 @@ nav ul {
   border-radius: 7px;
   margin-right: 10px;
   margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+  top: 0;
+  left: 0;
 }
 
-.btn--light {
+.btn.btn--light {
   background: #D5C8C0;
   color: #414A4D;
 }
 
-.btn--dark {
+.btn.btn--dark {
   background: #414A4D;
   color: #D5C8C0;
 }
 
-.btn--outline {
+.btn.btn--outline {
   color: #414A4D;
   background: transparent;
   border: 2px solid #414A4D;
+}
+
+.btn:hover {
+  left: -3px;
+  top: -3px;
+  -webkit-box-shadow: 2px 5px 2px #0004;
+          box-shadow: 2px 5px 2px #0004;
 }
 
 .front {
@@ -216,40 +235,38 @@ nav ul {
   .section--mission,
   .section--taproom {
     -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .section--taproom {
+    -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
   .card {
     padding: 1.3rem;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  .card ~ img {
-    display: none;
-  }
-  .card ~ .section__image {
-    display: block;
-    height: 300px;
-    width: 100%;
-    background: url(../images/mission.jpg) no-repeat fixed;
-    background-size: cover;
-  }
-  .card--light ~ .section__image {
-    background: url(../images/taproom.jpg) no-repeat fixed;
-    background-size: cover;
   }
   .back {
     margin: 0;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    width: 95%;
   }
   .front {
+    margin-top: -40px;
+    width: 95%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  img.front, img.back {
     -o-object-fit: cover;
        object-fit: cover;
-    width: 100%;
-    margin: 0;
+    height: 250px;
+    z-index: -1;
+    width: 80%;
   }
 }
 
@@ -261,6 +278,7 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .section--brewery .section__image {
@@ -291,7 +309,6 @@ nav ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0;
   }
   .section--brewery .section__image {
     display: none;
@@ -307,7 +324,7 @@ nav ul {
     position: relative;
   }
   .section--brewery .section__content p {
-    color: #414A4D;
+    color: #272727;
   }
   .section--brewery .section__content::after {
     content: '';
@@ -319,7 +336,7 @@ nav ul {
     background: url(../images/keg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: .75;
+    opacity: .7;
     z-index: -1;
   }
 }
