@@ -3,9 +3,27 @@
     margin: 0 auto 2em;
     display: block;
   }
+
+  .wine {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    width: 200px;
+    z-index: 1;
+  }
+
+  .hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    z-index: 0;
+    object-fit: cover;
+  }
   
   .section--intro {
-    background-image: url(../images/hero-bg.jpg);
+    // background-image: url(../images/hero-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: -ms-grid;
@@ -16,16 +34,21 @@
     width: 100%;
     text-align: center;
     color: #AEA79E;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
   }
   
   .section--intro .logo {
     grid-column: 2 / 3;
     margin-bottom: 2.5em;
+    z-index: 2;
   }
   
   .intro__text {
     grid-column: 2 / 3;
     position: relative;
+    z-index: 3;
   }
   
   .intro__text::after {

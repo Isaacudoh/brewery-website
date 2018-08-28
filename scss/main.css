@@ -1,6 +1,5 @@
 @import url("https://use.typekit.net/ixk5mhv.css");
 nav {
-  /* position: fixed; */
   position: absolute;
   top: 0;
   left: 0;
@@ -35,8 +34,26 @@ nav ul {
   display: block;
 }
 
+.wine {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  width: 200px;
+  z-index: 1;
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .section--intro {
-  background-image: url(../images/hero-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: -ms-grid;
@@ -47,6 +64,9 @@ nav ul {
   width: 100%;
   text-align: center;
   color: #AEA79E;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .section--intro .logo {
@@ -54,6 +74,7 @@ nav ul {
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
   margin-bottom: 2.5em;
+  z-index: 2;
 }
 
 .intro__text {
@@ -61,6 +82,7 @@ nav ul {
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
   position: relative;
+  z-index: 3;
 }
 
 .intro__text::after {
@@ -90,7 +112,7 @@ nav ul {
   padding: 6rem 2rem;
 }
 
-.section__about {
+.section--beer .section__about {
   width: 50%;
   margin: auto;
 }
@@ -120,6 +142,9 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  padding-bottom: 10px;
+  overflow: hidden;
 }
 
 .section--taproom {
@@ -222,6 +247,7 @@ nav ul {
 }
 
 .front {
+  position: relative;
   margin-left: -50px;
   margin-top: 140px;
   z-index: 10;
@@ -290,6 +316,20 @@ nav ul {
   overflow: hidden;
   margin-right: 30px;
   padding: 0;
+}
+
+.section__image {
+  opacity: 0;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.section__image.is-showing {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
 }
 
 .section__content {
@@ -373,6 +413,7 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  background: url(../images/bg.png);
 }
 
 a {
