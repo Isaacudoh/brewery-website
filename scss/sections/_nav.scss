@@ -1,5 +1,5 @@
 nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -7,6 +7,12 @@ nav {
     padding: .5rem 0;
     z-index: 1000;
     font-family: 'program', sans-serif;
+    background: transparent;
+    transition: all 0.5s ease-in;
+    &.alone {
+        background: #414a4d;
+        box-shadow: 0 3px 20px #0008
+    }
 }
 
 nav ul {

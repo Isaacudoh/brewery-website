@@ -11,4 +11,11 @@ footer {
 
 footer .logo {
     margin: 20px auto;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.4s ease-in-out;
+    &.is-showing {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

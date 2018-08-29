@@ -14,49 +14,46 @@ scrollLink.click(function (e) {
 $(window).scroll(function () {
   let wScroll = $(window).scrollTop()
 
-  // INTRO
-  $('.section--intro .logo').css({
-    'transform': 'translate(0px, ' + wScroll / 4 + 'px)'
-  });
-  $('.intro__text').css({
-    'transform': 'translate(0px, ' + wScroll / 6 + 'px)'
-  });
-  $('.wine').css({
-    'transform': 'translate(0px, ' + wScroll / 3 + 'px)'
-  });
+  if (wScroll > introHeight) {
+    $('nav').addClass('alone')
+  }
+  if (wScroll < introHeight) {
+    $('nav').removeClass('alone')
+  }
 
-  $('.hero').css({
-    'transform': 'translate(0px, -' + wScroll / 100 + '%)'
-  });
+
+
+  // INTRO
+  if (wScroll < introHeight) {
+    $('.section--intro .logo').css({
+      'transform': 'translate(0px, -' + wScroll / 4 + 'px)'
+    });
+    $('.intro__text').css({
+      'transform': 'translate(0px, -' + wScroll / 6 + 'px)'
+    });
+  }
 
   // FLOATING CARDS
   if (wScroll > $('.section--mission').offset().top - $(window).height()) {
-
     var offset = (Math.min(0, wScroll - $('.section--mission').offset().top + $(window).height() - 350)).toFixed();
 
-    $('.section--mission .card').css({ 'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
-    $('.section--mission .card--img').css({ 'transform': 'translate(' + Math.abs(offset) + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
-
+    $('.section--mission .card').css({ 'transform': 'translate(' + offset + 'px,0)' });
+    $('.section--mission .card--img').css({ 'transform': 'translate(' + Math.abs(offset) + 'px,0)' });
   }
 
   if (wScroll > $('.section--taproom').offset().top - $(window).height()) {
-
     var offset = (Math.min(0, wScroll - $('.section--taproom').offset().top + $(window).height() - 350)).toFixed();
 
-    $('.section--taproom .card').css({ 'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
-    $('.section--taproom .card--img').css({ 'transform': 'translate(' + Math.abs(offset) + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
+    $('.section--taproom .card').css({ 'transform': 'translate(' + offset + 'px,0)' });
+    $('.section--taproom .card--img').css({ 'transform': 'translate(' + Math.abs(offset) + 'px,0)' });
   }
 
   // LANDING ELEMENTS
   if (wScroll > $('#brewery').offset().top - ($(window).height() / 1.2)) {
-
-    $('#brewery').each(function (i) {
-
-      // setTimeout(function () {
-        $('#brewery .section__image').addClass('is-showing');
-      // }, (700 * (Math.exp(i * 0.14))) - 700);
-    });
-
+      $('#brewery .section__image').addClass('is-showing');
+  }
+  if (wScroll > $('footer').offset().top - ($(window).height() / 1.2)) {
+    $('footer .logo').addClass('is-showing');
   }
 
 })

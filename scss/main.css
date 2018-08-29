@@ -1,6 +1,6 @@
 @import url("https://use.typekit.net/ixk5mhv.css");
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -8,6 +8,15 @@ nav {
   padding: .5rem 0;
   z-index: 1000;
   font-family: 'program', sans-serif;
+  background: transparent;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+nav.alone {
+  background: #414a4d;
+  -webkit-box-shadow: 0 3px 20px #0008;
+          box-shadow: 0 3px 20px #0008;
 }
 
 nav ul {
@@ -34,14 +43,6 @@ nav ul {
   display: block;
 }
 
-.wine {
-  position: absolute;
-  right: 10%;
-  bottom: 0;
-  width: 200px;
-  z-index: 1;
-}
-
 .hero {
   position: absolute;
   top: 0;
@@ -54,6 +55,7 @@ nav ul {
 }
 
 .section--intro {
+  background-image: url(../images/hero-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: -ms-grid;
@@ -109,11 +111,11 @@ nav ul {
 
 .section--beer {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 6rem 1rem;
 }
 
 .section--beer .section__about {
-  width: 50%;
+  max-width: 37rem;
   margin: auto;
 }
 
@@ -253,10 +255,6 @@ nav ul {
   z-index: 10;
 }
 
-.card ~ .section__image {
-  display: none;
-}
-
 @media (max-width: 870px) {
   .section--mission,
   .section--taproom {
@@ -380,6 +378,17 @@ footer {
 
 footer .logo {
   margin: 20px auto;
+  opacity: 0;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+footer .logo.is-showing {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
 }
 
 * {
@@ -399,7 +408,6 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  background: url(../images/bg.png);
 }
 
 a {
