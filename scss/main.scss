@@ -5,14 +5,15 @@
 @import 'sections/brewery';
 @import 'sections/footer';
 
-@import url("https://use.typekit.net/ixk5mhv.css");
+$bold : $bold;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: "edita", serif;
+  font-family: "Roboto Slab", serif;
   font-size: 1.3125rem;
   line-height: 1.5;
   color: #89807A;
@@ -30,7 +31,7 @@ a {
 
 .section__title,
 .section__subtitle {
-  font-family: "program", sans-serif;
+  font-family: $bold;
   line-height: 1;
 }
 

@@ -18,7 +18,7 @@
   background-image: url(../images/hero-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  display: -ms-grid;
+  background-attachment: fixed;
   display: grid;
   grid: auto-flow/minmax(1em, 1fr) minmax(400px, 650px) minmax(1em, 1fr);
   padding: 20vh 0;

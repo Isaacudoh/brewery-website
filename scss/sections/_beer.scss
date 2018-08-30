@@ -7,14 +7,84 @@
     }
 }
 
-.grid-carousel {
+.carousel {
     display: flex;
+    justify-content: center;
+    max-width: 100%;
+    margin: 3rem auto;
+    overflow-x: hidden;
+    position: relative;
+    button {
+        all: unset;
+        z-index: 11;
+    }
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom:0;
+        right: 0;
+        z-index: 10;
+    }
+    &::after {
+        left: calc(50% + 7rem);
+        background: linear-gradient(to left, #fff, #fff6);
+        box-shadow: -5px 0px 100px #fff9;
+    }
+    &::before {
+        right: calc(50% + 7rem);
+        background: linear-gradient(to right, #fff, #fff6);
+        box-shadow: 5px 0px 100px #fff9;
+    }
+}
+
+.carousel-items {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    position: relative;
+}
+
+figure {
+    flex-shrink: 0;
+    width: 15rem;
+    transition: transform .3s ease-in-out;
+}
+
+.carousel__caption {
+    font-family: $bold;
+    line-height: 1.5;
     display: none;
+}
+
+.carousel__title {
+    font-size: 2rem;
+}
+.carousel__subtitle {
+    font-size: 1.8rem;
+    line-height: .8;
+    span {
+        font-size: 1.3rem;
+        display: block;
+        text-transform: uppercase;
+    }
+}
+.carousel__description {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 700px) {
     .section__about {
         width: 95%;
         margin: auto;
-    }   
+    }
 }
+
+/*
+<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>
+<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>
+*/
