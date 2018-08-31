@@ -139,6 +139,10 @@ nav ul {
 }
 
 .carousel button svg path {
+  fill: #A3B9BF;
+}
+
+.carousel button:hover path {
   fill: #414A4D;
 }
 

@@ -19,6 +19,9 @@
         background: transparent;
         cursor: pointer;
         svg path {
+            fill: #A3B9BF;
+        }
+        &:hover path {
             fill: #414A4D;
         }
     }
