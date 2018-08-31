@@ -12,7 +12,8 @@ nav {
 }
 
 nav.alone {
-  background: #414a4d;
+  color: #414A4D;
+  background: #fff;
   -webkit-box-shadow: 0 3px 20px #0008;
           box-shadow: 0 3px 20px #0008;
 }
@@ -30,8 +31,8 @@ nav ul {
 
 @media (max-width: 450px) {
   nav {
-    padding: .5rem 1.25rem;
-    font-size: 18px;
+    padding: .5rem 1rem;
+    font-size: 15px;
   }
 }
 
@@ -133,33 +134,12 @@ nav ul {
 
 .carousel button {
   all: unset;
-  z-index: 11;
+  background: transparent;
+  cursor: pointer;
 }
 
-.carousel::after, .carousel::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.carousel::after {
-  left: calc(50% + 7rem);
-  background: -webkit-gradient(linear, right top, left top, from(#fff), to(#fff6));
-  background: linear-gradient(to left, #fff, #fff6);
-  -webkit-box-shadow: -5px 0px 100px #fff9;
-          box-shadow: -5px 0px 100px #fff9;
-}
-
-.carousel::before {
-  right: calc(50% + 7rem);
-  background: -webkit-gradient(linear, left top, right top, from(#fff), to(#fff6));
-  background: linear-gradient(to right, #fff, #fff6);
-  -webkit-box-shadow: 5px 0px 100px #fff9;
-          box-shadow: 5px 0px 100px #fff9;
+.carousel button svg path {
+  fill: #414A4D;
 }
 
 .carousel-items {
@@ -174,6 +154,32 @@ nav ul {
   position: relative;
 }
 
+.carousel-items::after, .carousel-items::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.carousel-items::after {
+  left: calc(50% + 7rem);
+  background: -webkit-gradient(linear, right top, left top, from(#fff), to(#fff6));
+  background: linear-gradient(to left, #fff, #fff6);
+  -webkit-box-shadow: -5px 0px 100px #fff9;
+          box-shadow: -5px 0px 100px #fff9;
+}
+
+.carousel-items::before {
+  right: calc(50% + 7rem);
+  background: -webkit-gradient(linear, left top, right top, from(#fff), to(#fff6));
+  background: linear-gradient(to right, #fff, #fff6);
+  -webkit-box-shadow: 5px 0px 100px #fff9;
+          box-shadow: 5px 0px 100px #fff9;
+}
+
 figure {
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -185,7 +191,7 @@ figure {
 }
 
 .carousel__caption {
-  font-family: 'Passion One', sans-serif;
+  font-family: "Passion One", sans-serif;
   line-height: 1.5;
   display: none;
 }
@@ -217,10 +223,6 @@ figure {
   }
 }
 
-/*
-<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>
-<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>
-*/
 .section--mission,
 .section--taproom {
   display: -webkit-box;
@@ -242,6 +244,12 @@ figure {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+
+#taproom img,
+#mission .card {
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
 }
 
 .front,
@@ -270,37 +278,37 @@ figure {
   margin-bottom: 20px;
 }
 
-.card.card--dark {
+.card--dark {
   background: #424D51;
 }
 
-.card.card--light {
-  background: #fff;
-}
-
-.card.card--dark:after {
+.card--dark::after {
   border: 3px dashed #718085;
 }
 
-.card.card--light:after {
-  border: 3px dashed #414A4D;
-}
-
-.card.card--dark .section__title {
+.card--dark .section__title {
   color: #fff;
 }
 
-.card.card--dark p {
+.card--dark p {
   color: #A3B9BF;
 }
 
-.card.card--light p {
+.card--light {
+  background: #fff;
+}
+
+.card--light::after {
+  border: 3px dashed #414A4D;
+}
+
+.card--light p {
   color: #414A4D;
 }
 
 .btn {
   padding: 6px 20px;
-  font-family: 'Passion One';
+  font-family: "Passion One", sans-serif;
   border-radius: 7px;
   margin-right: 10px;
   margin-top: 10px;
@@ -445,7 +453,7 @@ figure {
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
-    padding: 3rem;
+    padding: 2rem;
     position: relative;
   }
   .section--brewery .section__content p {
@@ -456,7 +464,7 @@ figure {
 footer {
   text-align: center;
   margin: 150px 0;
-  font-family: 'amarnath';
+  font-family: "Passion One", sans-serif;
   color: #D1C9C1;
 }
 
@@ -505,7 +513,7 @@ a {
 
 .section__title,
 .section__subtitle {
-  font-family: 'Passion One', sans-serif;
+  font-family: "Passion One", sans-serif;
   line-height: 1;
 }
 

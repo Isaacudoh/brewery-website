@@ -1,7 +1,7 @@
 let introHeight = $('.section--intro').height() + (0.4 * $(window).height())
 let scrollLink = $('.scroll');
 
-// Smooth scrolling
+// SMOOTH SCROLLING
 scrollLink.click(function (e) {
   e.preventDefault();
   $('body,html').animate({
@@ -37,34 +37,36 @@ $(window).scroll(function () {
 
 })
 
+// THE DOM STUFF
 const left = document.getElementById('js-left')
 const right = document.getElementById('js-right')
-const list = $('.carousel__item')
-
+let list = Object.values(document.querySelectorAll('.carousel__item'))
+// VARIABLES
 let translate;
-let currentItem = 2
-let item = list[currentItem];
-let caption = item.querySelector('figcaption');
-$(caption).show()
-
+let length = list.length
+let spotlightIndex = Math.ceil((length-1) / 2)
+let spotlight = list[spotlightIndex];
+let caption = spotlight.querySelector('figcaption');
+caption.style.display = 'block'
+// ONCLICK FUNCTION
 const clickStuff = hand => {
-  $(caption).hide()
-
+  caption.style.display = 'none' // REMOVE ALL CAPTIONS
+  // CHENGE SPOTLIGHT INDEX WITH RESPECT TO WHERE YOU WANT TO GO
   if (hand === 'left') {
-    currentItem = (currentItem == 0) ? 4 : (currentItem - 1);
+    spotlightIndex = (spotlightIndex == 0) ? 4 : (spotlightIndex - 1);
   } else {
-    currentItem = (currentItem == 4) ? 0 : (currentItem + 1);
+    spotlightIndex = (spotlightIndex == 4) ? 0 : (spotlightIndex + 1);
   }
-
-  item = list[currentItem]
-  caption = item.querySelector('figcaption')
-  $(caption).show()
-
-  translate = (2-currentItem)*100
+  // VARAIABLE RELOADED
+  spotlight = list[spotlightIndex]
+  caption = spotlight.querySelector('figcaption')
+  caption.style.display = 'block'
+  // ANIMATION
+  translate = (2-spotlightIndex)*100;
   Object.keys(list).forEach(function(key) {
-    $(list[key]).css('transform', 'translateX(' +translate+'%)')
+    list[key].style.transform = 'translateX(' + translate + '%)';
   })
 }
-
-$(left).click(_ => {clickStuff('left')})
-$(right).click(_ => {clickStuff('right')})
+// EVENT LISTENERS
+left.addEventListener('click', _ => clickStuff('left'))
+right.addEventListener('click',  _ => clickStuff('right'))

@@ -12,6 +12,11 @@
     flex-direction: row-reverse
 }
 
+#taproom img ,
+#mission .card {
+    transform: translate(-100%, 0)
+}
+
 .front,
 .back {
     box-shadow: 0 0 15px #00000080;
@@ -34,28 +39,28 @@
     p {
         margin-bottom: 20px;
     }
-    &.card--dark {
-        background: #424D51;
-    }
-    &.card--light {
-        background: #fff;
-    }  
-    &.card--dark:after {
+}
+.card--dark {
+    background: #424D51;
+    &::after {
         border: 3px dashed #718085;
     }
-    &.card--light:after {
-        border: 3px dashed #414A4D;
-    }
-    &.card--dark .section__title{
+    .section__title{
         color: #fff;
     }
-    &.card--dark p {
+    p {
         color: #A3B9BF;
     }
-    &.card--light p {
+}
+.card--light {
+    background: #fff;
+    &::after {
+        border: 3px dashed #414A4D;
+    }
+    p {
         color: #414A4D;
     }
-}
+}  
 
 .btn {
     padding: 6px 20px;

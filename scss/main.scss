@@ -1,11 +1,10 @@
+$bold : 'Passion One', sans-serif;
 @import 'sections/nav';
 @import 'sections/intro';
 @import 'sections/beer';
 @import 'sections/cards';
 @import 'sections/brewery';
 @import 'sections/footer';
-
-$bold : $bold;
 
 * {
   margin: 0;
