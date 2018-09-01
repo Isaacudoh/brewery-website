@@ -18,6 +18,9 @@
         all: unset;
         background: transparent;
         cursor: pointer;
+        &:active {
+            background: #fff;
+        }
         svg path {
             fill: #A3B9BF;
         }
