@@ -26,7 +26,7 @@
         background: transparent;
         cursor: pointer;
         &:active {
-            background: #fff;
+            background: #ffffff;
         }
         svg path {
             fill: #A3B9BF;
@@ -55,13 +55,13 @@
     }
     &::after {
         left: calc(50% + 7rem);
-        background: linear-gradient(to left, #fff, #fff6);
-        box-shadow: -5px 0px 100px #fff9;
+        background: linear-gradient(to left, #ffffff, #ffffff66);
+        box-shadow: -5px 0px 100px #ffffff99;
     }
     &::before {
         right: calc(50% + 7rem);
-        background: linear-gradient(to right, #fff, #fff6);
-        box-shadow: 5px 0px 100px #fff9;
+        background: linear-gradient(to right, #ffffff, #ffffff66);
+        box-shadow: 5px 0px 100px #ffffff99;
     }
 }
 

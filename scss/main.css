@@ -160,7 +160,7 @@ nav ul {
 }
 
 .carousel button:active {
-  background: #fff;
+  background: #ffffff;
 }
 
 .carousel button svg path {
@@ -195,18 +195,18 @@ nav ul {
 
 .carousel-items::after {
   left: calc(50% + 7rem);
-  background: -webkit-gradient(linear, right top, left top, from(#fff), to(#fff6));
-  background: linear-gradient(to left, #fff, #fff6);
-  -webkit-box-shadow: -5px 0px 100px #fff9;
-          box-shadow: -5px 0px 100px #fff9;
+  background: -webkit-gradient(linear, right top, left top, from(#ffffff), to(#ffffff66));
+  background: linear-gradient(to left, #ffffff, #ffffff66);
+  -webkit-box-shadow: -5px 0px 100px #ffffff99;
+          box-shadow: -5px 0px 100px #ffffff99;
 }
 
 .carousel-items::before {
   right: calc(50% + 7rem);
-  background: -webkit-gradient(linear, left top, right top, from(#fff), to(#fff6));
-  background: linear-gradient(to right, #fff, #fff6);
-  -webkit-box-shadow: 5px 0px 100px #fff9;
-          box-shadow: 5px 0px 100px #fff9;
+  background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff66));
+  background: linear-gradient(to right, #ffffff, #ffffff66);
+  -webkit-box-shadow: 5px 0px 100px #ffffff99;
+          box-shadow: 5px 0px 100px #ffffff99;
 }
 
 figure {
@@ -478,8 +478,9 @@ figure {
 
 footer {
   text-align: center;
-  margin: 150px 0;
+  padding: 150px 0;
   color: #D1C9C1;
+  background: url(../images/bg1.png);
 }
 
 .logo--light path {
