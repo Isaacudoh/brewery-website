@@ -1,3 +1,7 @@
+window.onload = function () {
+  document.getElementById('body').classList.add('loaded');
+}
+
 const elem = selector => {
   return document.querySelector(selector)
 }
@@ -14,7 +18,8 @@ let nav = elem('nav')
 let introHeight = elem('.section--intro').offsetHeight
 let missionOffset = elem('#mission').offsetTop - $(window).height()
 let breweryOffset = elem('#brewery').offsetTop - ($(window).height() / 1.2)
-let footerOffset = elem('footer').offsetTop - ($(window).height() / 1.2)
+let footerOffset = elem('footer').offsetTop - ($(window).height() / 10)
+let beerOffset = elem('#beer').offsetTop - ($(window).height() / 1.6)
 
 $(window).scroll(function () {
   let wScroll = $(window).scrollTop()
@@ -35,7 +40,13 @@ $(window).scroll(function () {
   }
 
   // LANDING ELEMENTS
+  if (wScroll > beerOffset) {elem('#beer .section__title').classList.add('is-showing');}
+  if (wScroll > beerOffset - 50) {elem('#beer .section__subtitle').classList.add('is-showing');}
+
+  if (wScroll > breweryOffset*1.2) {elem('#brewery .section__title').classList.add('is-showing');}
   if (wScroll > breweryOffset) {elem('#brewery .section__image').classList.add('is-showing');}
+  if (wScroll > breweryOffset) {elem('#brewery .section__subtitle').classList.add('is-showing');}
+  if (wScroll > footerOffset) {console.log('ok')}
   if (wScroll > footerOffset) {elem('footer .logo').classList.add('is-showing');}
 
 })
@@ -61,7 +72,7 @@ const clickStuff = hand => {
   } else {
     spotlightIndex = (spotlightIndex == (list.length - 1)) ? 0 : (spotlightIndex + 1);
   }
-  // VARAIABLE RELOADED
+  // VARAIABLES RELOADED
   spotlight = list[spotlightIndex]
   caption = spotlight.querySelector('figcaption')
   caption.style.display = 'block'

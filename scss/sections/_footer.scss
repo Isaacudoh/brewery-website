@@ -1,8 +1,7 @@
 footer {
     text-align: center;
     margin: 150px 0;
-    font-family: $bold;
-    color: #D1C9C1
+    color: #D1C9C1;
 }
 
 .logo--light path {
@@ -11,11 +10,8 @@ footer {
 
 footer .logo {
     margin: 20px auto;
-    opacity: 0;
-    transform: translateX(10px);
-    transition: all 0.4s ease-in-out;
+    @extend %is-not-showingX;
     &.is-showing {
-        transform: translateX(0);
-        opacity: 1;
+        @extend %is-showingX
     }
 }

@@ -3,6 +3,13 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    .section__title,
+    .section__subtitle {
+        @extend %is-not-showingY;
+        &.is-showing {
+            @extend %is-showingY;
+        }
+    }
 }
 
 .section--brewery .section__image {
@@ -14,12 +21,9 @@
 }
 
 .section__image {
-    opacity: 0;
-    transform: translateX(10px);
-    transition: all 0.4s ease-in-out;
+    @extend %is-not-showingX;
     &.is-showing {
-        transform: translateX(0);
-        opacity: 1;
+        @extend %is-showingX;
     }
 }
 

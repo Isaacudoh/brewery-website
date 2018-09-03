@@ -5,6 +5,13 @@
         max-width: 37rem;
         margin: auto;
     }
+    .section__title,
+    .section__subtitle {
+        @extend %is-not-showingY;
+        &.is-showing {
+            @extend %is-showingY;
+        }
+    }
 }
 
 .carousel {
