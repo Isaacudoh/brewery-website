@@ -1,42 +1,45 @@
-let introHeight = $('.section--intro').height() + (0.4 * $(window).height())
+const elem = selector => {
+  return document.querySelector(selector)
+}
+// SMOOTH SCROLLING --------------------
 let scrollLink = $('.scroll');
-
-// SMOOTH SCROLLING
 scrollLink.click(function (e) {
   e.preventDefault();
   $('body,html').animate({
     scrollTop: $(this.hash).offset().top
   }, 1000);
 });
+// PARALLAX --------------------
+let nav = elem('nav')
+let introHeight = elem('.section--intro').offsetHeight
+let missionOffset = elem('#mission').offsetTop - $(window).height()
+let breweryOffset = elem('#brewery').offsetTop - ($(window).height() / 1.2)
+let footerOffset = elem('footer').offsetTop - ($(window).height() / 1.2)
 
 $(window).scroll(function () {
   let wScroll = $(window).scrollTop()
 
   // NAVIGATION
-  if (wScroll > introHeight) { $('nav').addClass('alone') }
-  if (wScroll < introHeight) { $('nav').removeClass('alone') }
+  if (wScroll > introHeight) { nav.classList.add('alone') }
+  if (wScroll < introHeight) { nav.classList.remove('alone') }
 
   // FLOATING CARDS
-  if (wScroll > $('.section--mission').offset().top - $(window).height()) {
-    var offset = (Math.min(0, wScroll - $('.section--mission').offset().top + $(window).height() - 350)).toFixed();
+  if (wScroll > missionOffset) {
+    var offset = (Math.min(0, wScroll - elem('.section--mission').offsetTop + $(window).height() - 350)).toFixed();
     $('.section--mission .card').css({ 'transform': 'translate(' + offset + 'px,0)' });
   }
 
-  if (wScroll > $('.section--taproom').offset().top - $(window).height()) {
+  if (wScroll > missionOffset) {
     var offset = (Math.min(0, wScroll - $('.section--taproom').offset().top + $(window).height() - 350)).toFixed();
     $('.section--taproom .card--img').css({ 'transform': 'translate(' + Math.abs(offset) + 'px,0)' });
   }
 
   // LANDING ELEMENTS
-  if (wScroll > $('#brewery').offset().top - ($(window).height() / 1.2)) {
-      $('#brewery .section__image').addClass('is-showing');
-  }
-  if (wScroll > $('footer').offset().top - ($(window).height() / 1.2)) {
-    $('footer .logo').addClass('is-showing');
-  }
+  if (wScroll > breweryOffset) {elem('#brewery .section__image').classList.add('is-showing');}
+  if (wScroll > footerOffset) {elem('footer .logo').classList.add('is-showing');}
 
 })
-
+// CAROUSEL --------------------
 // THE DOM STUFF
 const left = document.getElementById('js-left')
 const right = document.getElementById('js-right')
