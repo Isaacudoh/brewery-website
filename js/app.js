@@ -18,7 +18,7 @@ let nav = elem('nav')
 let introHeight = elem('.section--intro').offsetHeight
 let missionOffset = elem('#mission').offsetTop - $(window).height()
 let breweryOffset = elem('#brewery').offsetTop - ($(window).height() / 1.2)
-let footerOffset = elem('footer').offsetTop - ($(window).height() / 10)
+let footerOffset = elem('footer').offsetTop - ($(window).height() / 4)
 let beerOffset = elem('#beer').offsetTop - ($(window).height() / 1.6)
 
 $(window).scroll(function () {
@@ -46,8 +46,11 @@ $(window).scroll(function () {
   if (wScroll > breweryOffset*1.2) {elem('#brewery .section__title').classList.add('is-showing');}
   if (wScroll > breweryOffset) {elem('#brewery .section__image').classList.add('is-showing');}
   if (wScroll > breweryOffset) {elem('#brewery .section__subtitle').classList.add('is-showing');}
-  if (wScroll > footerOffset) {console.log('ok')}
-  if (wScroll > footerOffset) {elem('footer .logo').classList.add('is-showing');}
+  if (wScroll > footerOffset) {
+    elem('footer .logo').classList.add('is-showing');
+    // console.log('shownmf')
+  }
+  console.log(wScroll, footerOffset)
 
 })
 // CAROUSEL --------------------
