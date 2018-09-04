@@ -50,6 +50,10 @@ nav.alone {
           box-shadow: 0 3px 20px #0008;
 }
 
+nav.alone li::after {
+  background: #414A4D;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,6 +63,29 @@ nav ul {
       justify-content: space-around;
   max-width: 450px;
   margin: auto;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+}
+
+nav li {
+  position: relative;
+}
+
+nav li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  -webkit-transition: width 0.75s cubic-bezier(0.75, -0.5, 0, 1.75);
+  transition: width 0.75s cubic-bezier(0.75, -0.5, 0, 1.75);
+}
+
+nav li:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 @media (max-width: 450px) {
@@ -164,11 +191,11 @@ nav ul {
 }
 
 .carousel button svg path {
-  fill: #A3B9BF;
+  stroke: #A3B9BF;
 }
 
 .carousel button:hover path {
-  fill: #414A4D;
+  stroke: #414A4D;
 }
 
 .carousel-items {
