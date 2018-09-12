@@ -31,15 +31,20 @@ $bold : 'Passion One', sans-serif;
   box-sizing: border-box;
 }
 body {
-    font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", serif;
   font-size: 1.3125rem;
   line-height: 1.5;
   color: #89807A;
   font-weight: 400;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+  // user-select: none;
+  // -moz-user-select: none;
+  // -webkit-user-select: none;
+  // -ms-user-select: none;
+}
+
+::selection {
+  background: #89807A;
+  color: #fff;
 }
 
 .loader-container {
